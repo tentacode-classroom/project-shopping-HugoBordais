@@ -1,0 +1,53 @@
+{% extends 'layout.twig' %}
+
+
+
+{% block head %}
+    <title># {{ title }} - Menu #</title>
+{% endblock %}
+
+{% block nav %}
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div style="padding-left: 15%">
+             <a class="navbar-brand" href="/home ">{{ logo }}Sharp</a>
+        </div>
+        {#<ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+            </li>
+        </ul>#}
+    </nav>
+{% endblock %}
+
+{% block content %}
+
+<main role="main">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="right-container">
+                <img class="card-img-top" src="/image/smartphone_logo.png">
+                <div class="title-card">
+                    <h5> Projet Symfony</h5>
+                    <p> Vente de téléphone </p>
+                    <ul>
+                        <li class="item">
+                            <a href="/home"> {{ mark_1 }}</a>
+                        </li>
+                        <li class="item">
+                            <a href="/home"> {{ mark_2 }}</a>
+                        </li>
+                    </ul>
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

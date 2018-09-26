@@ -12,7 +12,7 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->render('home.twig', [
+        return $this->render('homepage.twig', [
             'controller_name' => 'HomeController',
             'title' => 'Sharp',
             'logo' => '#',

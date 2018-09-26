@@ -47,10 +47,10 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? $_ENV['TRUSTED_HOSTS'] ?? false
 //// Error 404
 //switch ($page){
 //    case 'contact':
-//        echo $twig->render('contact.twig');
+//        echo $twig->render('detail.twig');
 //        break;
 //    case 'home':
-//        echo $twig->render('home.twig');
+//        echo $twig->render('homepage.twig');
 //        break;
 //    default:
 //        header('HTTP/1.0 404 Not Found');

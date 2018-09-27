@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Accueil
+{% endblock %}
+
+{% block content %}
+    <ul>
+    {% for phone in phones %}
+        <li>
+            <p><a href="{{ path('product', { 'productId': phone.id })}}">{{ phone.name }}, {{ phone.status }}</a> {{ phone.id }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

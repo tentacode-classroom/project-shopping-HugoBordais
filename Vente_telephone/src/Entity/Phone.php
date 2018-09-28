@@ -41,6 +41,11 @@ class Phone
      */
     private $spec;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $viewCounter;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,5 +109,21 @@ class Phone
         $this->spec = $spec;
 
         return $this;
+    }
+
+    public function getViewCounter(): ?int
+    {
+        return $this->viewCounter;
+    }
+
+    public function setViewCounter(int $viewCounter): self
+    {
+        $this->viewCounter = $viewCounter;
+
+        return $this;
+    }
+
+    public function incrementViewCounter(){
+        $this->viewCounter++;
     }
 }

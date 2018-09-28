@@ -1,11 +1,31 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+    {{ phone.name }}
+{% endblock %}
+
 {% block content %}
-    <ul>
-        {% for phone in phones %}
-            <li>
-                <p><a href="{{ path('product', { 'productId': phone.id })}}">{{ phone.name }}, {{ phone.status}} , {{ phone.description }}, {{ phone.spec }}, {{ phone.price }}</a></p>
-            </li>
-        {% endfor %}
-    </ul>
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    {#<img class="card-img-top" src="">#}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <p>{{ phone.name }} - {{ phone.price }}€ <br> {{ phone.viewCounter }} vues</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <p>Description :<br> {{ phone.description }} </p>
+                            <p>Fiche technique : <br> {{ phone.spec }} </p>
+                        </div>
+                    </div>
+                </div>
+    </main>
+
+
 {% endblock %}

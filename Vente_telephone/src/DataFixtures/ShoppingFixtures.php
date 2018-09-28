@@ -39,6 +39,7 @@ Vous vivez à 100 à l\'heure ? Désormais vous avez un allié capable de vous s
         $phone3->setPrice(799);
 
         $manager->persist($phone3);
+
         $manager->flush();
     }
 }

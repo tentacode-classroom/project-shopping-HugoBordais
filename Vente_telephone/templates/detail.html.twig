@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    {{ dump(phone) }}
+    <ul>
+        {% for phone in phones %}
+            <li>
+                <p><a href="{{ path('product', { 'productId': phone.id })}}">{{ phone.name }}, {{ phone.status}} , {{ phone.description }}, {{ phone.spec }}, {{ phone.price }}</a></p>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

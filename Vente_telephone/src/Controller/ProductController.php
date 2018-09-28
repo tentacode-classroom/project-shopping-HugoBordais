@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\ProductRepository;
+use App\Entity\Phone;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,7 +13,8 @@ class ProductController extends AbstractController
      */
     public function index( $productId = null )
     {
-        $productRepository = new ProductRepository();
+        $doctrine = $this->getDoctrine();
+        $productRepository = $doctrine->getRepository(Phone::class);
         $phone = $productRepository->findOneById( (int) $productId);
 
         return $this->render('detail.html.twig', [

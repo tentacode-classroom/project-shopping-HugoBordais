@@ -6,44 +6,56 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <link href="starter-template.css" rel="stylesheet">
 </head>
 
-<body class="text-center">
+<body>
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-        <div class="inner">
-            <a class="return_home" href="{{ path( 'home') }}"><i class="fab fa-slack"><h3 class="masthead-brand">Sharp</h3></i>
-            <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link active" href="{{ path( 'home' ) }}">Accueil</a>
-                <a class="nav-link" href="{{ path( 'product') }}">Nos produits</a>
-                <a class="nav-link" href="#">Contact</a>
-            </nav>
-        </div>
-    </header>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="{{ path( 'home') }}">Sharp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <main role="main" class="inner cover">
-        <h1 class="cover-heading">Quel smartphone est fait pour vous ?</h1>
-        <p class="lead">Une grande liste de smartphone pour vous, vous y trouverez votre bonheur à un prix accessible pour tous !.</p>
-        <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary">Découvrez</a>
-        </p>
-    </main>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href={{ path( 'home') }}><span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Contact</a>
+            </li>
+            {#<li class="nav-item dropdown">#}
+                {#<a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>#}
+                {#<div class="dropdown-menu" aria-labelledby="dropdown01">#}
+                    {#<a class="dropdown-item" href="#">Action</a>#}
+                    {#<a class="dropdown-item" href="#">Another action</a>#}
+                    {#<a class="dropdown-item" href="#">Something else here</a>#}
+                {#</div>#}
+            {#</li>#}
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Découvrez</button>
+        </form>
+    </div>
+</nav>
 
-    <footer class="mastfoot mt-auto">
-        <div class="inner">
-            <p> Website by <a href="https://www.linkedin.com/in/hugo-bordais/">Hugo Bordais</a>.</p>
-        </div>
-    </footer>
-</div>
+<main role="main" class="container">
 
+    <div class="starter-template">
+        <p class="lead"><h1>Nos téléphones</h1><br><h4> La liste des nombreux smartphone que nous vendons </h4></p>
+    </div>
+
+</main><!-- /.container -->
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

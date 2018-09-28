@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\ProductRepository;
+use App\Entity\Phone;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,9 +13,9 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        $productRepository = new ProductRepository();
+        $doctrine = $this->getDoctrine();
+        $productRepository = $doctrine->getRepository(Phone::class);
         $phones = $productRepository->findAll();
-
 
         return $this->render('homepage.html.twig', [
             'controller_name' => 'HomeController',

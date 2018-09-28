@@ -8,7 +8,7 @@
     <ul>
     {% for phone in phones %}
         <li>
-            <p><a href="{{ path('product', { 'productId': phone.id })}}">{{ phone.name }}, {{ phone.status }}</a> {{ phone.id }}</p>
+            <p><a href="{{ path('product', { 'productId': phone.id })}}">{{ phone.name }}, {{ phone.status}}</a></p>
         </li>
     {% endfor %}
     </ul>

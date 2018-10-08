@@ -18,9 +18,6 @@ class ProductController extends AbstractController
         $phone = $productRepository->find($productId);
 
         $phone->incrementViewCounter();
-//        $viewCounter = $phone->getViewCounter();
-//        $viewCounter = $viewCounter + 1;
-//        $phone->setViewCOunter($viewCounter);
         $manager = $this->getDoctrine()->getManager();
         $manager->persist($phone);
         $manager->flush();

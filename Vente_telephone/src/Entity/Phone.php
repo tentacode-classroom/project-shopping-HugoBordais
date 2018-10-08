@@ -27,11 +27,6 @@ class Phone
     private $status;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $description;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $price;
@@ -42,7 +37,12 @@ class Phone
     private $spec;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $viewCounter;
 
@@ -75,18 +75,6 @@ class Phone
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
     public function getPrice(): ?int
     {
         return $this->price;
@@ -111,15 +99,26 @@ class Phone
         return $this;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
     public function getViewCounter(): ?int
     {
         return $this->viewCounter;
     }
 
-    public function setViewCounter(int $viewCounter): self
+    public function setViewCounter(?int $viewCounter): self
     {
         $this->viewCounter = $viewCounter;
-
         return $this;
     }
 

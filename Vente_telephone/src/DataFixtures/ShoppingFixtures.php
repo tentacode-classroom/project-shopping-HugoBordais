@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use App\Entity\Phone;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -12,6 +13,19 @@ class ShoppingFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
+        $apple = new Category();
+        $apple->setName( 'Apple' );
+        $manager->persist( $apple );
+
+        $samsung = new Category();
+        $samsung->setName( 'Samsung' );
+        $manager->persist( $samsung );
+
+        $sony = new Category();
+        $sony->setName( 'Sony' );
+        $manager->persist( $sony );
+
+
         $phone1 = new Phone();
         $phone1->setName("Iphone Xs");
         $phone1->setStatus("Disponible");
@@ -19,6 +33,7 @@ class ShoppingFixtures extends Fixture
         $phone1->setSpec('64 Go, 5,8" ');
         $phone1->setPrice(1159);
         $phone1->setViewCounter(0);
+        $phone1->setCategory( $apple );
         $manager->persist($phone1);
 
         $phone2 = new Phone();
@@ -27,6 +42,7 @@ class ShoppingFixtures extends Fixture
         $phone2->setDescription("Si seulement tout était aussi performant que le nouveau Galaxy Note9. Vous vivez à 100 à l\'heure ? Désormais vous avez un allié capable de vous suivre.");
         $phone2->setSpec('512 Go, 6.4" ');
         $phone2->setPrice(1009);
+        $phone2->setCategory( $samsung );
         $manager->persist($phone2);
 
         $phone3 = new Phone();
@@ -35,6 +51,7 @@ class ShoppingFixtures extends Fixture
         $phone3->setDescription("Regardez, écoutez et ressentez avec intensité. Évadez-vous du quotidien pour plonger dans un nouvel univers de divertissement avec le Xperia XZ3. Faites l\'expérience d\'un écran OLED HDR, de haut-parleurs stéréo et d\'un système de vibration dynamique au bout de vos doigts avec un écran sans bords incroyablement fin.");
         $phone3->setSpec('64 Go, 6.0');
         $phone3->setPrice(799);
+        $phone3->setCategory( $sony );
         $manager->persist($phone3);
 
         $manager->flush();

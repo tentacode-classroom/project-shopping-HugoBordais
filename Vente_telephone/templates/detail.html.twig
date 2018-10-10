@@ -4,7 +4,7 @@
     {{ phone.name }}
 {% endblock %}
 
-{% block content %}
+{% block body %}
 
     <main role="main" class="container">
         <div class="row">
@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <div class="card-text">
                             <p>Description :<br> {{ phone.description }} </p>
-                            <p>Fiche technique : <br> {{ phone.spec }} </p>
+                            <p>Fiche technique : <br> {{ phone.ecran }} <br> {{ phone.stockage }}Go </p>
                         </div>
                     </div>
                 </div>

@@ -32,11 +32,6 @@ class Phone
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $spec;
-
-    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
@@ -51,6 +46,23 @@ class Phone
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $ecran;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $stockage;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $picture;
+
+
 
     public function getId(): ?int
     {
@@ -93,18 +105,6 @@ class Phone
         return $this;
     }
 
-    public function getSpec(): ?string
-    {
-        return $this->spec;
-    }
-
-    public function setSpec(string $spec): self
-    {
-        $this->spec = $spec;
-
-        return $this;
-    }
-
     public function getDescription(): ?string
     {
         return $this->description;
@@ -143,4 +143,42 @@ class Phone
 
         return $this;
     }
+
+    public function getEcran(): ?string
+    {
+        return $this->ecran;
+    }
+
+    public function setEcran(string $ecran): self
+    {
+        $this->ecran = $ecran;
+
+        return $this;
+    }
+
+    public function getStockage(): ?int
+    {
+        return $this->stockage;
+    }
+
+    public function setStockage(int $stockage): self
+    {
+        $this->stockage = $stockage;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    
 }

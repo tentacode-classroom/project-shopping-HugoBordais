@@ -1,18 +1,16 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        App\Entity\User:
+            algorithm: bcrypt
+            cost: 12
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    test:
-                        password: azertyuiop
-                        roles: 'ROLE_USER'
-                    bordaish@gmail.com:
-                        password: hugo77320
-                        roles: 'ROLE_ADMIN'
+        shopping_provider:
+            entity:
+                 class: App\Entity\User
+                 property: email
+
 
     firewalls:
         dev:

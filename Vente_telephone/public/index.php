@@ -31,31 +31,6 @@ if ($trustedProxies = $_SERVER['TRUSTED_PROXIES'] ?? $_ENV['TRUSTED_PROXIES'] ??
 if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? $_ENV['TRUSTED_HOSTS'] ?? false) {
     Request::setTrustedHosts(explode(',', $trustedHosts));
 }
-////Routing
-//$page = 'home';
-//if (isset($_GET['p'])) {
-//    $page = $_GET['p'];
-//}
-//
-//// Rendu template
-//$loader = new Twig_Loader_Filesystem(__DIR__ . '/templates');
-//$twig = new Twig_Environment($loader, [
-//    'cache' => false //__DIR__ . '/tmp'
-//]);
-//
-//
-//// Error 404
-//switch ($page){
-//    case 'contact':
-//        echo $twig->render('detail.html.twig');
-//        break;
-//    case 'home':
-//        echo $twig->render('homepage.html.twig');
-//        break;
-//    default:
-//        header('HTTP/1.0 404 Not Found');
-//        break;
-//}
 
 
 $kernel = new Kernel($env, $debug);

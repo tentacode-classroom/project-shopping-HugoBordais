@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PhoneRepository")
@@ -61,6 +62,11 @@ class Phone
      * @ORM\Column(type="string", length=255)
      */
     private $picture;
+
+    /**
+     * @var File
+     */
+    private $file;
 
 
 
@@ -180,5 +186,21 @@ class Phone
         return $this;
     }
 
-    
+    /**
+     * @return File/null
+     */
+    public function getFile(): ?File
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param File $file/null
+     */
+    public function setFile(File $file): void
+    {
+        $this->file = $file;
+    }
+
+
 }

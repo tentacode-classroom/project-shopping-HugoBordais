@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Phone;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,7 +18,7 @@ class PhoneType extends AbstractType
             ->add('price')
             ->add('ecran')
             ->add('stockage')
-            ->add('picture')
+            ->add('file', FileType::class)
             ->add('description')
             ->add('viewCounter')
             ->add('category')
